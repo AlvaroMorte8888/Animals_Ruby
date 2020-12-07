@@ -1,16 +1,14 @@
-<form>
+<form action="/posts/create" method="POST">
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <label for="title">Заголовок</label>
+    <input type="text" class="form-control">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+    <label for="exampleFormControlSelect1">Выберите тему</label>
+    <select class="form-control">
+      <%= @topics.each do |topic| %>
+        <option value="<%= topic.id %>"><%= topic.itle %></option>
+        <% end %>
     </select>
   </div>
   <div class="form-group">
