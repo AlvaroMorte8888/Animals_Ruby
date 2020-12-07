@@ -6,6 +6,10 @@ class PostsController < ApplicationController
 
   def show
   
-  end  
+  end
+
+  def new
+    @topics = Topic.all()
+  end
 
 end
